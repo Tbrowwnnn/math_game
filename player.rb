@@ -23,8 +23,10 @@ class Player
     @lives -= 1
   end
 
-  def increase_score
-    @score += 1
+  def loser
+    @loser = false
+    if(lives === 0)
+      @loser = true
   end
 end
 

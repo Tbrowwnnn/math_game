@@ -4,24 +4,43 @@ class Game
 
   def play
     questions = Math_problem.new
+
     puts "#{@player1.get_name}: What is #{questions.question}"
     answer = $stdin.gets.chomp.to_i
+
     if(answer === questions.answer)
-      puts "Correct!"
-      puts "#{@player1.get_name}: #{@player1.lives} vs #{@player2.get_name}: #{@player2.lives}"
+      puts "#{@player1.get_name}: Correct!"
+      puts "#{@player1.get_name}: #{@player1.lives}/3 vs #{@player2.get_name}: #{@player2.lives}/3"
+    else(answer != questions.answer)
+      puts "#{@player1.get_name}: Wrong! You suck at math!"
+      @player1.reduce_lives
     end
+
+    if(@player1.lives > 0 && @player2.lives > 0)
+      puts "#{@player1.get_name}: #{@player1.lives}/3 vs #{@player2.get_name}: #{@player2.lives}/3"
+      puts "-----Next Turn-----"
       puts "#{@player2.get_name}: What is #{questions.question}"
       answer = $stdin.gets.chomp.to_i
+
       if(answer === questions.answer)
-        puts "Correct!"
+        puts "#{@player2.get_name}: Correct!"
         puts "#{@player1.get_name}: #{@player1.lives} vs #{@player2.get_name}: #{@player2.lives}"
+      else(answer != questions.answer)
+        puts "#{@player2.get_name}: Wrong! You suck at math!"
+        @player2.reduce_lives
       end
-      
+
       if(@player1.lives > 0 && @player2.lives > 0)  
         play
         else 
-          puts "Game Over"
-      end
+          puts "----- Game Over ----"
+      end  
+      
+      else 
+        puts "----- Game Over ----"
+    end
+
+      
   end   
 
   def start
