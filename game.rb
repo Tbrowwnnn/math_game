@@ -9,9 +9,19 @@ class Game
     if(answer === questions.answer)
       puts "Correct!"
       puts "#{@player1.get_name}: #{@player1.lives} vs #{@player2.get_name}: #{@player2.lives}"
-    
     end
-
+      puts "#{@player2.get_name}: What is #{questions.question}"
+      answer = $stdin.gets.chomp.to_i
+      if(answer === questions.answer)
+        puts "Correct!"
+        puts "#{@player1.get_name}: #{@player1.lives} vs #{@player2.get_name}: #{@player2.lives}"
+      end
+      
+      if(@player1.lives > 0 && @player2.lives > 0)  
+        play
+        else 
+          puts "Game Over"
+      end
   end   
 
   def start
