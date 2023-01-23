@@ -5,7 +5,7 @@ class Math_problem
   end
 
   def rand_operator
-    [:*, :-, :+, :/].sample
+    [:*, :-, :+].sample
   end
 
   def question
@@ -20,8 +20,6 @@ class Math_problem
     answer = @question
   end
 
-  # def question_string
-  #   question_string = @question_string
-  # end
+
 
 end
