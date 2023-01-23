@@ -1,0 +1,36 @@
+## Notes: 
+
+--Math Problem--
+First class will be math problem as it will be used to generate each question. 
+
+--Player--
+Then there will be one for PLAYER that will track the lives and the score for each player. 
+
+--Answer Checker--
+There will also be an answer checker that will check and return back whether the answer was right or wrong.
+
+
+--METHODS--
+
+--PLayer methods--
+
+-Will need a variable that represents the score and a variable that represents the players lives. 
+-will need a method that will increase score if their answer was correct 
+- will need a method that will decrease lives if their answer was wrong
+- will need a method for game over that will activate after lives hit 0.
+
+--Math Problem Methods -- 
+
+-Will need a variable that will track the current questions answer
+-Will need a variable that represents the math question
+- will need a method that will generate 2 random numbers between 0-20
+- Will need a method that will send out the final contstructed question
+
+--Answer Checker Methods--
+
+-Will handle the main game loop
+-Will need a method to keep track of the current player and who's turn it is.
+-Will need a method to communicate directly to the player whether their answer was right or wrong. 
+-will need a method to relay the score after each turn
+-will need a method that will relay remaining lives after an answer is wrong. 
+-Will need a method that will check whether or not an answer is correct. 
