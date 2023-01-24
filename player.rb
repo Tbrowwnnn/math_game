@@ -27,6 +27,15 @@ class Player
     @loser = false
     if(lives === 0)
       @loser = true
+    end
+  end
+
+  def set_current=(isit)
+    @current = isit
+  end
+
+  def current
+    @current
   end
 end
 
